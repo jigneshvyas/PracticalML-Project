@@ -15,14 +15,14 @@ It Consista of data from accelerometers on the belt, forearm, arm, and dumbell o
 Goal of this project is to predict the manner in which they did the exercise using the training and test data provided.
 
 <b>Environment Setup</b>
-```{r warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE}
 library(caret)
 library(randomForest)
 library(rattle)
 ```
 
 <b>Load the Data</b>
-```{r warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE}
 data<-read.csv("pml-training.csv",header=TRUE)
 testdata<-read.csv("pml-testing.csv",header=TRUE)
 ```
@@ -71,13 +71,13 @@ testset<-data[-trainIndex,]
 We will fit model using RandomForest, as this is classification problem and RandomForest will automatically select important variables.<br>
 randomforest() performs faster compared to "rf" when we have large data set.
 
-```{r warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE}
 set.seed(405)
 Model=randomForest(classe~.,data=trainset)
 ```
 
 <b>Predict</b>
-```{r warning=FALSE,message=FALSE}
+```{r, warning=FALSE,message=FALSE}
 # Predict
 predicttrainset<-predict(Model,newdata=trainset)
 predicttestset<-predict(Model,newdata=testset)
@@ -93,14 +93,14 @@ testingConfusion
 ```
 
 From below plot we also observe that error rate reduces significantly after around 30 trees.
-```{r }
+```{r, echo=FALSE}
 plot(Model)
 
 ```
 
 <b>Fina test</b><br>
 Finally we will apply this model on the final test set provided.
-```{r warning=FALSE,message=FALSE}
+```{r ,warning=FALSE,message=FALSE}
 predictfinaltest<-predict(Model,newdata=testdata)
 predictfinaltest
 ```
