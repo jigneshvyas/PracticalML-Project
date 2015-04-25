@@ -85,16 +85,16 @@ predicttestset<-predict(Model,newdata=testset)
 
 <b> Validate </b><br>
 We observe that we have near 99% accuracy on our test set. <br>
-```{r warning=FALSE,message=FALSE}
+```{r }
 trainingConfusion <- confusionMatrix(trainset$classe, predicttrainset)
 testingConfusion <- confusionMatrix(testset$classe, predicttestset)
 
-print(testingConfusion)
+testingConfusion
 ```
 
 From below plot we also observe that error rate reduces significantly after around 30 trees.
-```{r warning=FALSE,message=FALSE}
-plot(Model,uniform="True")
+```{r }
+plot(Model)
 
 ```
 
