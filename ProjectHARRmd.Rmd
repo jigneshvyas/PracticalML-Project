@@ -91,37 +91,7 @@ testingConfusion <- confusionMatrix(testset$classe, predicttestset)
 
 testingConfusion
 ```
-## Confusion Matrix and Statistics
-## 
-##           Reference
-## Prediction    A    B    C    D    E
-##          A 1116    0    0    0    0
-##          B    1  758    0    0    0
-##          C    0    1  683    0    0
-##          D    0    0    6  637    0
-##          E    0    0    0    2  719
-## 
-## Overall Statistics
-##                                           
-##                Accuracy : 0.9975          
-##                  95% CI : (0.9953, 0.9988)
-##     No Information Rate : 0.2847          
-##     P-Value [Acc > NIR] : < 2.2e-16       
-##                                           
-##                   Kappa : 0.9968          
-##  Mcnemar's Test P-Value : NA              
-## 
-## Statistics by Class:
-## 
-##                      Class: A Class: B Class: C Class: D Class: E
-## Sensitivity            0.9991   0.9987   0.9913   0.9969   1.0000
-## Specificity            1.0000   0.9997   0.9997   0.9982   0.9994
-## Pos Pred Value         1.0000   0.9987   0.9985   0.9907   0.9972
-## Neg Pred Value         0.9996   0.9997   0.9981   0.9994   1.0000
-## Prevalence             0.2847   0.1935   0.1756   0.1629   0.1833
-## Detection Rate         0.2845   0.1932   0.1741   0.1624   0.1833
-## Detection Prevalence   0.2845   0.1935   0.1744   0.1639   0.1838
-## Balanced Accuracy      0.9996   0.9992   0.9955   0.9975   0.9997
+
 From below plot we also observe that error rate reduces significantly after around 30 trees.
 ```{r, echo=FALSE}
 plot(Model)
